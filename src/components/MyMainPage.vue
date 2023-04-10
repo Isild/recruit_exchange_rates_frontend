@@ -100,7 +100,7 @@ export default {
     },
     reloadTableExchangeRateData() {
       this.tableExchangeRates=null
-      axios.get(process.env.VUE_APP_BACKEND_URL + "/exchange-rates?date_from=" + this.dateBegin + "&date_to=" + this.dateEnd)
+      axios.get(process.env.VUE_APP_BACKEND_URL + "/exchange-rates?date_from=" + this.dateBegin + "&date_to=" + this.dateEnd + "&order_by=DESC")
         .then((response) => {
             this.tableExchangeRates=response.data.data
 
