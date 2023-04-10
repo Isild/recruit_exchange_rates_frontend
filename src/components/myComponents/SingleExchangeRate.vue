@@ -35,7 +35,7 @@ export default {
     },
     methods: {
         reloadExchangeRateData() {
-            axios.get("http://127.0.0.1:8000/v0/exchange-rates?date_from=" + this.date + "&date_to=" + this.date)
+            axios.get(process.env.VUE_APP_BACKEND_URL + "/exchange-rates?date_from=" + this.date + "&date_to=" + this.date)
                 .then((response) => {
                     this.data=response.data.data
                 })

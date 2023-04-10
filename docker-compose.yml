@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  vue-app:
+    build: 
+      context: .
+      dockerfile: . 
+    ports:
+      - 8080:8080
+    volumes:
+      - ./:/app/
+    command: 'yarn serve'
+    networks:
+      - testing-network
+    
+networks:
+  testing-network:
+    name: testing-network-global
+    external: true

@@ -1,5 +1,9 @@
 # recruit_exchange_rates_frontend
 
+## First step
+
+Copy `.env.example` file into `.env` file and complete variables. Next you can run application localy with `yarn` or with `docker`
+
 ## Project setup
 
 ```
@@ -28,6 +32,10 @@ yarn lint
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### CORS
+## Docker
 
-In `vue.config.js` file
+Application can be run by docker application with command below:
+
+```
+docker-compose up --build
+```

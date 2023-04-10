@@ -85,7 +85,7 @@ export default {
       updateItem.selected = !updateItem.selected
     },
     getCurrencies() {
-      axios.get("http://127.0.0.1:8000/v0/exchange-rates/available-currencies")
+      axios.get(process.env.VUE_APP_BACKEND_URL + "/exchange-rates/available-currencies")
         .then((response) => {
           this.currenciesToDisplay=response.data.currencies
 
@@ -100,7 +100,7 @@ export default {
     },
     reloadTableExchangeRateData() {
       this.tableExchangeRates=null
-      axios.get("http://127.0.0.1:8000/v0/exchange-rates?date_from=" + this.dateBegin + "&date_to=" + this.dateEnd)
+      axios.get(process.env.VUE_APP_BACKEND_URL + "/exchange-rates?date_from=" + this.dateBegin + "&date_to=" + this.dateEnd)
         .then((response) => {
             this.tableExchangeRates=response.data.data
 
