@@ -2,7 +2,7 @@
     <div style="display: inline-flex; float:right;">
         <div style="padding-right: 10px;">
             Reload single
-            <button class="button" @click="reloadExchangeRateData"> Refresh </button>
+            <button class="button" @click="reloadExchangeRateData">Reload</button>
         </div>
         <div class="listing-element" 
             v-for="currency in toDisplay(displayCurrencies)" 
@@ -18,7 +18,6 @@
 
 <script>
 import axios from 'axios'
-// import dayjs from 'dayjs';
 
 export default {
     name: 'SingleExchangeRate',

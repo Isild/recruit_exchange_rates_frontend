@@ -103,6 +103,17 @@ export default {
       axios.get("http://127.0.0.1:8000/v0/exchange-rates?date_from=" + this.dateBegin + "&date_to=" + this.dateEnd)
         .then((response) => {
             this.tableExchangeRates=response.data.data
+
+            this.tableExchangeRates = this.tableExchangeRates.map((item) => {
+            return {
+              id: item.id,
+              date: item.date.split("T")[0],
+              eur: item.eur,
+              usd: item.usd,
+              gbp: item.gbp,
+              jpy: item.jpy,
+            }
+          })
         })
     },
     dateSelected(selectedDate) {
