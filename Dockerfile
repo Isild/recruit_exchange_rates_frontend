@@ -10,4 +10,5 @@ COPY package.json /app/
 COPY vue.config.js /app/
 # COPY yarn.lock /app/
 
+# RUN  yarn install
 CMD [ "yarn", "serve" ]

@@ -39,3 +39,5 @@ Application can be run by docker application with command below:
 ```
 docker-compose up --build
 ```
+
+Run this command after you install dependencies by `yarn`
